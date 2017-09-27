@@ -3,11 +3,16 @@ package com.capgemini;
 interface Left{
 
 	int a = 10;
+	
+	//default method
 	default public void m1(){
 		System.out.println("Inside Left interface..");
 	}; 
 	
 	//add static method
+	static public void m2(){
+		System.out.println("");
+	}
 }
 
 interface Right{
@@ -22,7 +27,8 @@ public class DefaultMethodExample implements Left,Right{
 
 	public static void main(String[] args) {
 		
-		
+		//calling static method from inteerface
+		Left.m2();
 
 	}
 

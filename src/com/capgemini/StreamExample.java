@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Map.Entry;
 import java.util.Set;
 import java.util.stream.Collectors;
 
@@ -31,7 +32,8 @@ public class StreamExample {
 		map.put(4,"xyzcd");
 		map.put(5,"");
 		//how to work with Map
-		//HashMap<Integer,String> filteredMap = map.values().stream().filter(s-> !s.isEmpty()).collect(Collectors.t)
+		List<Entry<Integer, String>> filteredMap = map.entrySet().stream().filter(Entry->!Entry.getValue().isEmpty()).collect(Collectors.toList());
+		System.out.println("Filtered Map :"+filteredMap);
 	}
 
 }
